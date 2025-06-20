@@ -81,12 +81,16 @@ class Test_User_Profile_Class:
 
 
     def test_CredKart_Registration_003(self):
-        self.driver.get(self.register_url)
+        self.driver.get("https://automation.credence.in/register")
         self.rp = Registration_Page_Class(self.driver) # Object Creation
         name = Faker().name()
         email = Faker().email()
         print(f"Name: {name}, Email: {email}")
         # Field - Name
+        print("🔍 Debug Info:")
+        print("Current URL:", self.driver.current_url)
+        print("Page Title:", self.driver.title)
+        print("Page Source (partial):", self.driver.page_source[:500])
         self.rp.Enter_Name(name)
 
         # Field - Email

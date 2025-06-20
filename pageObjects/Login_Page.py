@@ -17,7 +17,7 @@ class Login_Page_Class:
 # driver is defined in conftest.py
 
     def Enter_Email(self, email):
-        self.wait.until(expected_conditions.presence_of_element_located((By.ID, self.text_email_id)))
+        self.wait.until(expected_conditions.visibility_of_element_located((By.ID, self.text_email_id)))
         self.driver.find_element(By.ID,self.text_email_id).send_keys(email)
 
     def Enter_Password(self, password):

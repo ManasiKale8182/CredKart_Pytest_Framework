@@ -30,6 +30,10 @@ class Test_Login_Excel_003:
             self.password = Excel_Utils.read_data(self.excel_path, self.sheet_name, i, 3)
             self.expected_result = Excel_Utils.read_data(self.excel_path, self.sheet_name, i, 4)
             self.log.info("Entering email--" + str(self.email))
+            print("🔍 Debug Info:")
+            print("Current URL:", self.driver.current_url)
+            print("Page Title:", self.driver.title)
+            print("Page Source (partial):", self.driver.page_source[:500])  # print only first 500 chars
             self.lp.Enter_Email(self.email)
             self.log.info("Entering password--" + self.password)
             self.lp.Enter_Password(self.password)
